@@ -47,19 +47,19 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-export const burger = {
-  name: "Burger", 
-  price: 18, 
-  category: "Lunch", 
-  discount: function(string){
-    if(string==='teacher'||'student'){
-      return this.price-(this.price*0.25);
-    }
-    else if(string==='public'){
-      return this.price-(this.price*0.10);
-    }
-  }
-}
+// export const burger = {
+//   name: "Burger", 
+//   price: 18, 
+//   category: "Lunch", 
+//   discount: function(string){
+//     if(string==='teacher'||'student'){
+//       return this.price-(this.price*0.25);
+//     }
+//     else if(string==='public'){
+//       return this.price-(this.price*0.10);
+//     }
+//   }
+// }
 
 
 
@@ -158,10 +158,15 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array,rating) {
+    let ratingArray=[];
+    for(let i=0;i<array.length;i++){
+      if(array[i].rating===rating){
+        ratingArray.push(array[i]);
+      }
+    }return ratingArray;
   }
-
+console.log(getReviewByRating(reviews,4));
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -176,10 +181,15 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(array,wordCount) {
+    let reviewArray=[];
+      for(let i=0;i<array.length;i++){
+        if(array[i].feedback.length>wordCount){
+          reviewArray.push(array[i]);
+        }
+      }return reviewArray;
   }
-  
+  console.log(getLongReviews(reviews,500));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -211,9 +221,9 @@ function foo(){
   return 'bar';
 }
 
-export default{
-  foo,
-  createMenuItem,
-  getReviewByIndex,
-  getLastReview,
-}
+// export default{
+//   foo,
+//   createMenuItem,
+//   getReviewByIndex,
+//   getLastReview,
+// }
